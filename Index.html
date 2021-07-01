@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Robot Control التحكم بالروبوت</title>
+    <link rel="stylesheet" href='style.css'>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <form name="form1" method="post" action="save_to_db.php" style="text-align: center;">
+  <div class="slidecontainer">
+    <label for="slider1">محرك 1</label>
+    <input type="range" min="1" max="100" value="0" class="slider1" id="myRange1" name="motor1">
+    <p>القيمه: <span id="demo1"></span></p>
+
+    <label for="slider2">محرك 2</label>
+    <input type="range" min="1" max="100" value="0" class="slider2" id="myRange2" name="motor2">
+    <p>القيمه: <span id="demo2"></span></p>
+
+    <label for="slider3">محرك 3</label>
+    <input type="range" min="1" max="100" value="0" class="slider3" id="myRange3" name="motor3">
+    <p>القيمه: <span id="demo3"></span></p>
+
+    <label for="slider4">محرك 4</label>
+    <input type="range" min="1" max="100" value="0" class="slider4" id="myRange4" name="motor4">
+    <p>القيمه: <span id="demo4"></span></p>
+
+    <label for="slider5">محرك 5</label>
+    <input type="range" min="1" max="100" value="0" class="slider5" id="myRange5" name="motor5">
+    <p>القيمه: <span id="demo5"></span></p>
+
+    <label for="slider6">محرك 6</label>
+    <input type="range" min="1" max="100" value="0" class="slider6" id="myRange6" name="motor6">
+    <p>القيمه: <span id="demo6"></span></p>
+  </div>
+  <input type="submit" name="submit" style="margin-top: 50px; margin-left: 50px;" />
+    <!-- Rounded switch -->
+    <label class="switch">
+      <input type="checkbox" name="on_off">
+      <span class="slider round"></span>
+      <p>On/Off</p>
+    </label>
+</form>
+
+  <script>
+    // var sliderContainer = document.getElementsByClassName("slidecontainer");
+    // var slider = document.getElementById("myRange");
+    // var output = document.getElementById("demo");
+    // output.innerHTML = slider.value; // Display the default slider value
+
+    // // Update the current slider value (each time you drag the slider handle)
+    // slider.oninput = function() {
+    //   output.innerHTML = this.value;
+    // }
+
+    $('input[type=range]').each(function(index) {
+      $(this).on('input', function () {
+        $(this)
+        var item_index = index + 1
+        $(this).trigger('change');
+        var current_slider_value = $(this).val()
+        $('#demo'+item_index).html(current_slider_value)
+        $(this).attr('value', current_slider_value)
+        
+      });
+    })
+  </script>
+  </body>
+</html>
