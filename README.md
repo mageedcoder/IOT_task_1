@@ -1,4 +1,4 @@
-# IOT_task_1
+# IOT_Task_1_arm_controllers
 arm engines control
 I made 6 slider controls for the 6 engines using the form element, with 7 inputs, 6 inputs of type "range" are assigned for the engines, the values range from 0-100. and additional input pf type switch for switching on and off the arm.
 simple javascript code for assigning the values on current sliders to the span element.
